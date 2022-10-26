@@ -12,6 +12,7 @@
 
     // Declaring an associative array
     $prices = ["bag" => 100, "tire" => 200, "oil" => 20];
+    $elements = array("Hydrogen"=>1, "Helium"=>2, "Lithium"=>3);
 
     //getting elements from array
     echo $fruits[0],"<br>";
