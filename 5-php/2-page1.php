@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
-<html>
-<head></head>
+<html lang="en">
+<head><title>Log In</title></head>
 <body>
     <main>
-        <form action="process.php" method="POST">
+        <form action="/5-php/2-process.php" method="POST">
         <label><input type="text" id="username" name="username"> Username:</label>
         <label><input type="text" id="password" name="password">Password:</label>
         <button type="submit">Send</button>
