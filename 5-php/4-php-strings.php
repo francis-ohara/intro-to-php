@@ -18,13 +18,29 @@ echo strtoupper($sentence);
 echo "<br><br>";
 
 
-// OTHER STRING FUNCTIONS
+// find length of string
 $email = "francis.ohara@acity.edu.gh";
 echo strlen($email);  // no. of characters in string
 echo "<br>";
+echo "<br>";
+
+// check if string begins with substring
+$sentence = "All I see is gold.";
+echo str_starts_with($sentence, "All");
+echo "<br>";
+echo "<br>";
+
+// check if string ends with substring
+$sentence = "All you see is snow.";
+echo str_ends_with($sentence, "snow.");
+echo "<br>";
+echo "<br>";
 
 // remove whitespace from string
-;
+echo str_replace(" ", "", "Anything could happen at Harvard.");  // find and replace
+echo "<br>";
+echo implode("", explode(" ", "Anything could happen at Harvard."));  // explode then implode
+echo "<br>";
 echo "<br>";
 
 // splitting string by separator
@@ -43,3 +59,9 @@ echo "<br><br>";
 $url_arr = ["www", "francis-ohara", "com", "gh"];
 $url = implode(".", $url_arr);
 echo $url;
+echo "<br>";
+echo "<br>";
+
+// removing unwanted characters from beginning and end of string
+$string = "./Hello my name is Bridgit. Nice to meet you!$5";
+echo trim($string, "./$5");
