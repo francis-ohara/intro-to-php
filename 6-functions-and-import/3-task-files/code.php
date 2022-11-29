@@ -1,4 +1,5 @@
 <?php
+
 function calc(){
     echo "It works!";
 }

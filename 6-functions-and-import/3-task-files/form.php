@@ -30,7 +30,7 @@
     <!DOCTYPE html>
     <html lang="en">
     <body>
-    <form action="2-task.php" method="POST">
+    <form action="../3-task.php" method="POST">
       <fieldset>
         <legend>Calculate SUM</legend>
         <label for="value1"> Value1:</label>

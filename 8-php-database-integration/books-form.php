@@ -1,5 +1,5 @@
 
-<form action="details.php">
+<form action="process.php">
     <fieldset>
         <label for="title">Title</label>
         <input type="text" id="title" name="title">

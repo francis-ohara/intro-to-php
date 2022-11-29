@@ -1,5 +1,5 @@
 <?php
-include "./3-data/code.php"
+require "./3-task-files/code.php"
 ?>
 
 <!doctype html>
@@ -11,7 +11,7 @@ include "./3-data/code.php"
 <body>
 <header>
     <?php
-        include "./2-data/header.html";
+        include "./3-task-files/header.html";
     ?>
 </header>
 <main>
@@ -26,20 +26,20 @@ include "./3-data/code.php"
     </div>
     <div>
         <?php
-            include "./2-data/main.html";
+            include "./3-task-files/main.html";
         ?>
     </div>
     <div>
 
         <?php
-            include "./3-data/form.php";
+            include "./3-task-files/form.php";
         ?>
 
     </div>
 </main>
 <footer>
     <?php
-        include "./2-data/footer.html";
+        include "./3-task-files/footer.html";
     ?>
 </footer>
 
