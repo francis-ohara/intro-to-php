@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign Up to Creative Learning</title>
+</head>
+
+<body>
 <h2 style="text-align: center"> CREATE AN ACCOUNT</h2>
 <?php
 if (isset($_POST["create"])) {
@@ -69,8 +76,8 @@ if (isset($_POST["create"])) {
         <br>
     </fieldset>
 </form>
-
-
+</body>
+</html>
 <?php
 function create_account()
 {

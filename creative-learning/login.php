@@ -1,6 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login to Creative Learning</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+<body class="container">
 <h2 style="text-align: center">SIGN IN</h2>
 
-<?php if (isset($_POST["login"])) authorize($_POST["username"], $_POST["password"]); ?>
 
 <form action="" method="post">
     <fieldset>
@@ -15,20 +24,24 @@
         <br> <br>
         <label>Employee<input type="radio" id="employee" checked name="account-type" value="employee" required></label>
         <label>Manager<input type="radio" id="manager" name="account-type" value="manager"></label>
-        <br> <br>
-
-        <button type="submit" name="login">Log In</button>
-        <button type="submit" name="signup" formaction="signup.php">Sign Up</button>
         <br>
+        <br>
+        <button class="btn btn-primary" type="submit" name="login">Log In</button>
+        <button class="btn btn-primary" type="submit" name="signup" formaction="signup.php">Sign Up</button>
+        <br><br>
 
+        <?php if (isset($_POST["login"])) authorize($_POST["username"], $_POST["password"]); ?>
+        <br>
     </fieldset>
     <div style="text-align: right">No account? <a href="signup.php">Sign up</a></div>
-
 </form>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+</html>
 
 <?php
-
-
 function authorize($username, $password)
 {
     // connect to creative learning database
