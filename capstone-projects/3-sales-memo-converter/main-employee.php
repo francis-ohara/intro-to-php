@@ -62,7 +62,6 @@ function update_database(){
     $path_to_doc = "./memos/$filename";
     $path_to_xml = "./xml-files/$filename.xml";
     $date_uploaded = filemtime($path_to_doc);
-    echo "hello world!";
     $query2 = "INSERT INTO Memos(FileName, FileSize, DateUploaded, Uploader,StoreOfUploader, PathToDoc, PathToXML)
                 VALUES ('$filename', '$filesize', FROM_UNIXTIME('$date_uploaded'), '$uploader','$store_of_uploader' ,'$path_to_doc', '$path_to_xml' )";
     $conn->query($query2);
