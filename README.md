@@ -1,4 +1,2 @@
 # web-technologies
-Repository of code for course I took on web technologies.
-
-**Index No**: 10201100101
+PHP scripts on introduction to PHP for back-end development.
