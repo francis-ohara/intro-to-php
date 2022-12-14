@@ -21,7 +21,7 @@
     <fieldset>
         <p>Upload Your Sales Memo Here:</p>
         <label>
-            <input type="file" name="memo" id="memo" accept=".docx,.doc" required>
+            <input type="file" name="memo" id="memo" required>
         </label>
         <br><br>
         <button type="submit" name="upload">Upload File</button>
@@ -35,17 +35,11 @@
 function uploader()
 {
     if (!is_dir("./memos")) mkdir("./memos");
-    if (!is_dir("./xml-files")) mkdir("./xml-files");
 
     $temp = $_FILES["memo"]["tmp_name"];
     $actual = $_FILES["memo"]["name"];
     move_uploaded_file($temp, "./memos/$actual");
-    $zip = new ZipArchive();
-    $zip->open("./memos/$actual", ZipArchive::CREATE);
-    $xml = $zip->getFromName("word/document.xml");
-    $xml_handle = new DOMDocument();
-    $xml_handle->loadXML($xml);
-    $xml_handle->save("./xml-files/$actual.xml");
+
 
 }
 
@@ -59,11 +53,10 @@ function update_database(){
     $store_of_uploader = $result["StoreOfEmployment"];
     $filename = $_FILES["memo"]["name"];
     $filesize = $_FILES["memo"]["size"];
-    $path_to_doc = "./memos/$filename";
-    $path_to_xml = "./xml-files/$filename.xml";
-    $date_uploaded = filemtime($path_to_doc);
-    $query2 = "INSERT INTO Memos(FileName, FileSize, DateUploaded, Uploader,StoreOfUploader, PathToDoc, PathToXML)
-                VALUES ('$filename', '$filesize', FROM_UNIXTIME('$date_uploaded'), '$uploader','$store_of_uploader' ,'$path_to_doc', '$path_to_xml' )";
+    $path_to_file = "./memos/$filename";
+    $date_uploaded = filemtime($path_to_file);
+    $query2 = "INSERT INTO Memos(FileName, FileSize, DateUploaded, Uploader, StoreOfUploader, PathToFile)
+                VALUES ('$filename', '$filesize', FROM_UNIXTIME('$date_uploaded'), '$uploader','$store_of_uploader' ,'$path_to_file')";
     $conn->query($query2);
     $conn->close();
 }

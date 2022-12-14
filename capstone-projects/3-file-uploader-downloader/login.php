@@ -56,6 +56,7 @@ function authorize($username, $password)
         $row = $result->fetch_assoc();
         if ($row["Username"] === $username && $row["Password"] === $password) {
             echo "<strong>Welcome!</strong>";
+            $conn->close();
             Header("Location: " . $main_page . "?username=" . $username);
         } else echo "<strong>Invalid Username and/or Password!</strong>";
     } else echo "<strong>Invalid Username and/or Password!</strong>";
