@@ -22,6 +22,10 @@ echo 5 > 100, "\n";  // greater than
 echo 5 >= 5, "\n";  // greater than or equal to
 echo 6 <= 7, "\n";  // less than or equal to
 
+// logical operators
+echo 1 && 1  // and
+echo 1 || 0  // or
+echo !0      // not
 
 // string concatenation
 echo "Hello " . "World!";
